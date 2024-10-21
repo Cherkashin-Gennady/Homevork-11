@@ -17,27 +17,29 @@ public class Main {
 
         // Task 2
         System.out.println("Задача 2");
-        printRecommendedAppVersion(1, 2015);
+        printRecommendedAppVersion(1, 2024);
+        //метод, на входе два параметра: тип операционной системы (0 — iOS, 1 — Android )
+        // и год выпуска устройства
     }
 
     public static void printRecommendedAppVersion(int deviceTupe, int deviceYear) {
-        int currentYear = LocalDate.now().getYear();
-        if (deviceYear < currentYear) {
-            if (deviceTupe == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        int currentYear = LocalDate.now().getYear(); //Текущий год
+        if (deviceYear < currentYear) { //система старше текущего года
+            if (deviceTupe == 0) {  //тип системы ios
+                System.out.println("Установите облегченную версию приложения для iOS."); //вывод в консоль
+            } else {  //иначе - тип системы Android
+                System.out.println("Установите облегченную версию приложения для Android."); //вывод в консоль
             }
-        } else {
-            if (deviceTupe == 0) {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
+        } else { //иначе - система текущего года
+            if (deviceTupe == 0) { //тип системы ios
+                System.out.println("Установите версию приложения для iOS."); //вывод в консоль -загрузи актуальную версию IOS
+            } else { //иначе - тип системы Android
+                System.out.println("Установите версию приложения для Android."); //вывод в консоль -загрузи актуальную версию Android
             }
         }
         // Task 3
         System.out.println("Задача 3");
-        int deys = calculateDeliveryDey(96);
+        int deys = calculateDeliveryDey(8);
         printDeliveryDey(deys);
     }
 
@@ -54,7 +56,7 @@ public class Main {
 
     public static void printDeliveryDey(int deys) {
         if (deys >= 0) {
-            System.out.println("Доставка займет " + deys + " дня");
+            System.out.println("Срок доставки " + deys + " дн.");
         } else {
             System.out.println("Доставки нет.");
         }
